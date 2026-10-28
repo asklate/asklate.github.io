@@ -18,6 +18,7 @@ plugins:
 header_pages:
   - about.md
   - archive.md
+  - topics.md
 
 author:
   name: "Kyle Eggleston"
