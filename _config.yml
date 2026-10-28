@@ -1,6 +1,6 @@
 title: "The Quiet Signal"
 description: "Notes, essays, and observations from the edges of everyday life."
-url: "https://YOUR-USERNAME.github.io"
+url: "https://asklate.github.io"
 baseurl: "" # For a project site, use "/YOUR-REPOSITORY"
 lang: en
 timezone: America/Denver
@@ -21,12 +21,12 @@ header_pages:
   - topics.md
 
 author:
-  name: "Your Name"
-  email: ""
+  name: "Kyle Eggleston"
+  email: "eggs447@gmail.com"
 
 social_links:
   - label: "GitHub"
-    url: "https://github.com/YOUR-USERNAME"
+    url: "https://github.com/asklate"
   - label: "RSS"
     url: "/feed.xml"
 
@@ -36,7 +36,7 @@ defaults:
       type: posts
     values:
       layout: post
-      author: "Your Name"
+      author: "Kyle Eggleston"
       comments: false
 
 exclude:
