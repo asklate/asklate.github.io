@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="article-shell">
+  <header class="article-header">
+    <a class="back-link" href="{{ '/' | relative_url }}">← Back to the notebook</a>
+    <div class="post-meta article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.categories.size > 0 %}<span class="meta-separator">/</span><span>{{ page.categories | join: ", " }}</span>{% endif %}
+      {% if page.reading_time %}<span class="meta-separator">/</span><span>{{ page.reading_time }} min read</span>{% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="article-deck">{{ page.description }}</p>{% endif %}
+    <div class="article-byline"><span class="byline-avatar">{{ page.author | default: site.author.name | slice: 0 | upcase }}</span><span>Words by <strong>{{ page.author | default: site.author.name }}</strong></span></div>
+  </header>
+  {% if page.image %}
+    <figure class="article-cover"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}"></figure>
+  {% else %}
+    <div class="article-art" aria-hidden="true"><span>FIELD NOTE</span><span class="article-art-symbol">✳</span><span>NO. {{ page.date | date: "%y%m%d" }}</span></div>
+  {% endif %}
+  <div class="article-body">
+    {{ content }}
+  </div>
+  {% if page.tags.size > 0 %}
+    <div class="tag-list" aria-label="Tags">{% for tag in page.tags %}<a href="{{ '/topics/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% endfor %}</div>
+  {% endif %}
+  <nav class="article-pagination" aria-label="Post navigation">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span>← OLDER POST</span><strong>{{ page.previous.title }}</strong></a>{% endif %}
+    {% if page.next %}<a class="next-post" href="{{ page.next.url | relative_url }}"><span>NEWER POST →</span><strong>{{ page.next.title }}</strong></a>{% endif %}
+  </nav>
+</article>

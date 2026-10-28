@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+          <span class="brand-mark">q<span>.</span></span>
+          <span class="brand-name">{{ site.title }}</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="{{ '/' | relative_url }}">Journal</a>
+          {% for path in site.header_pages %}
+            {% assign page_item = site.pages | where: "path", path | first %}
+            {% if page_item %}
+              <a href="{{ page_item.url | relative_url }}">{{ page_item.title }}</a>
+            {% endif %}
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <a class="footer-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          <p>{{ site.description }}</p>
+        </div>
+        <div class="footer-meta">
+          <span>Made slowly. Published openly.</span>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS feed ↗</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}</span>
+        <span>Powered by Jekyll · Hosted on GitHub Pages</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+title: "The Quiet Signal"
+description: "Notes, essays, and observations from the edges of everyday life."
+url: "https://YOUR-USERNAME.github.io"
+baseurl: "" # For a project site, use "/YOUR-REPOSITORY"
+lang: en
+timezone: America/Denver
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+paginate: 8
+paginate_path: "/page/:num/"
+# GitHub Pages supports the built-in Jekyll plugins listed here.
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+header_pages:
+  - about.md
+  - archive.md
+  - topics.md
+
+author:
+  name: "Your Name"
+  email: ""
+
+social_links:
+  - label: "GitHub"
+    url: "https://github.com/YOUR-USERNAME"
+  - label: "RSS"
+    url: "/feed.xml"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "Your Name"
+      comments: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
