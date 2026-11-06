@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Life Sucks"
-date: 2026-11-05 07:00:00 -0600
+date: 2026-11-06 07:00:00 -0600
 categories: [ journal ]
 tags: [ life ]
 description: "On how life can suck at times."
